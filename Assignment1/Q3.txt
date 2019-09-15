@@ -1,0 +1,48 @@
+3.	Design a Course Registration Platform
+User can
+a.	Login 
+b.	Register courses
+c.	Drop courses
+d.	Check syllabus
+
+Class: User
+Data: name, userId, syllabus
+Behavior: 
+loginPlatform(){
+	Platform.login(name);
+}
+registerCourse(){
+	if(registeredPeople <idealPeople){
+		Platform.registeredPeople++;
+		syllabus = Platform.addClassInfo();
+	}
+}
+dropCourse(){
+	Platform.registeredPeople--;
+}
+checkSyllabus(){
+	System.out.print(this.syllabus);
+}
+Class: Platform
+Data: class, idealPeople, registeredPeople, classInfo
+Behavior:
+checkAvailability(){
+	if (registeredPeople <idealPeople)
+		return true;
+	else
+		return false;
+}
+addClassInfo(){
+int i;
+	List<Courses>classInfo;
+	char classInfo = classInfo.get(i);
+}
+login(userName) {
+	List<String> nameList;
+	foreach(String name in nameList) {
+		if(userName == name)
+status = true;
+}
+status = false;
+} 
+

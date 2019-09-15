@@ -1,0 +1,65 @@
+4.	Design a vending Machine (will accept coins of different denominations and vends out candies, soda etc)
+Customer can
+a.	Choose a product
+b.	Pay in cash
+c.	Get product
+
+Class: Customer
+Data: totalPay
+Behavior: 
+chooseProduct() {
+	int i;
+	Product.types.products.get(i);
+	if (Product.price<=totalPay){
+VendingMachine.discriminateCoins();
+		Product.amounts--;
+}
+else
+return false;
+}
+
+
+Class: VendingMachine
+Data: denomination, 
+Behavior:
+discriminateCoins() {
+	List<Coins>coins;
+switch(cent){
+	case 1:
+		coins[0]++;
+		break;
+case 5:
+	coins[1]++;
+	break;
+	case 10
+		coins[2]++;
+		break;
+	case 25:
+		coins[3]++;
+		break;
+	case 50
+		coins[4]++;
+		break;
+	case 100:
+		coins[5]++;
+		break;
+}
+total = coins
+}
+Class Product
+Data: type, amount, price
+Behavior: 
+types(){
+	//Define all the kinds of products and each of them has an index
+	List<Products>products
+	a = products.get(0);
+	b = products.get(1);
+	бн
+}
+amounts() {
+	List<Products>amounts
+	a.amout = amounts.get(0);
+	b.amout = amounts.get(1);
+	бн
+}
+

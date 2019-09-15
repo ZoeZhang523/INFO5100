@@ -1,0 +1,59 @@
+5.	Design a Parking lot
+Customer can
+a.	Check parking space
+b.	Drive in
+c.	Pay online
+d.	Drive out
+
+Class: Customer
+Data: driveInTime, driveOutTime,cardNumber
+Behavior:
+checkSpace() {
+if(ParkingLot.checkAvailablity())
+		ParingLot.driveIn();
+	else
+		Error;
+}
+Pay() {
+	if(CreditCard.cardAvailable()){
+		parkingDetails = PaySystem.pay(driveInTime, driveOutTime);
+		ParingLot.driveOut();
+	}
+}
+Class: ParkingLot
+Data: numberOfSpaces
+Behavior:
+checkAvailablity (searchParams) {
+	Boolean isAvailable = true;
+if (numberOfSpaces =0) {
+isAvailable = false;
+break;
+}
+}
+driveIn:{
+	numberOfSpaces --;
+}
+driveOut() {
+	numberOfSpaces ++;
+}
+
+Class: PaySystem
+Data: pricePerHour
+Behavior: 
+pay(driveInTime, driveOutTime){
+int timeDuration;
+if(!CreditCard. cardAvailable ()){
+int price = pricePerHour * timeDuration;
+makePayment(travellerId, price )
+return parkingDetails;
+}
+else throw new Exception("Card is Expired");
+}
+Class: CreditCard
+Data: type, bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvailable() {
+	Date currentDate = new Date();
+return currentDate.compareTo(expireDate);
+}
+

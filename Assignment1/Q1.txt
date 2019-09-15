@@ -1,0 +1,46 @@
+1.	Design a Traffic Controller System for a Junction
+user can
+a.	Drive 
+b.	Stop
+c.	walk
+
+Class: Driver
+Data: drive, stop
+Behavior:
+drive(){
+	if(System.pass == true&&Walker.stop==true)
+		drive;
+}
+stop() {
+if(!(System.pass == true&&Walker.stop==true))
+		stop;
+}
+Class: Walker
+Data: walk, stop
+Behavior:
+walk() {
+	if(System.pass == true&&Driver.stop==true)
+		walk;
+}
+stop() {
+	if(!(System.stop == true&&Walker.stop==true))
+		stop;
+}
+Class: System
+Status: pass, stop, time, isWork
+Behavior:
+status(){
+Boolean pass = true;
+Boolean isWork = ttrue;
+	While(isWork = true){
+		timePause(time);
+		If(pass = true)
+			pass = false;
+else
+			pass = true;
+}
+}
+timePause(){
+	//Wait 30 seconds and the status of system will change
+	int time = 30;
+}

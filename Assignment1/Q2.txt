@@ -1,0 +1,86 @@
+2.	Design a Car Rental System
+User can
+a.	Login 
+b.	Choose a car
+c.	Choose timeDuation to rent the car
+d.	Pay by credit card
+e.	Review order
+f.	Cancel
+
+Class: User
+Data: name, rentDate,returnDate, userId, order, creditCardDetails
+Behavior:
+Login() {
+rentService.login(name);
+}
+SearchCars(SearchParams) {
+List<Cars> Cars = RentService.search(searchParams);
+}
+RentCar(){
+RentingDetails = RentService.rentCar(ownerId,rentDate,returnDate, numberOfCars);
+}
+review() {
+System.out.print(this.order);
+}
+Cancel() {
+RentService.cancelRent(rentId);
+}
+Class: RentService
+Behavior:
+login(userName) {
+	List<String> nameList;
+	foreach(String name in nameList) {
+		if(userName == name)
+status = true;
+}
+status = false;
+}
+search(searchParams) {
+List<Car> availableCars
+List<Car> cars
+for ( i = 0; i <cars.size(); i++) {
+Boolean isAvailable = true;
+while (searchParams.rentDate.compareTo(searchParams.returnDate)) {
+if (!cars.get(i).
+Availability(searchParams.rentDate)) {
+isAvailable = false;
+break;
+}
+searchParams.returnDate++;
+}
+}
+return availableCars;
+}
+rentCar(carId,rentDate,returnDate){
+Car car;
+int numberOfDays;
+if(!creditCardDetails.isCardExpired()){
+int price = car.price * numberOfDays * numberOfCars;
+               PaymentService.makePayment(userId, price )
+               return rentingDetails;
+               and generate order
+           }
+           else throw new Exception("Card is Expired");
+       }
+
+Behaviour: cancelRenting(rentingId){
+        fetch user object and fare
+         PaymentService.initiateRefund(user, price)
+        }
+Class: CreditCardDetails
+State: name, cardNumber, cardType, expiryDate
+Behaviour:  isCardExpired() {
+Date today = new Date();
+if(today.compareTo(expiryDate) == 1)
+return true;
+return false;
+}
+Class: CarOwner
+State: ownerId, name, list of cars
+
+Class: Cars
+State: name, ownerId, address, rentPrice, carId, 
+Behavior:
+checkAvailability(date) {
+	// check availability of the chosen car on specific date
+}
