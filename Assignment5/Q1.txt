@@ -1,0 +1,5 @@
+Q1: Explain the difference between final and finally in Java 8. 
+ 
+Final is used to declare properties, methods, and classes, which indicates that the property is immutable, the method cannot be overridden, and the class cannot be inherited. 
+ 
+Finally is part of the structure of the exception handling statement, so that the codes will always execute, regardless of whether an exception occurs. This allows finally to maintain the internal state of the object and clean up non-memory resources. 

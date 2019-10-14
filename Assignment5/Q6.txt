@@ -1,0 +1,49 @@
+//The answer is 6.
+
+class A {
+	List<Object> list = new LinkedList<>();
+	public boolean addAll(Collection<Object> c) { // This function was is called secondly
+		Iterator<Object> it = c.iterator();
+		while(it.hasNext()) // The time of the loop is 3 cause list's size is 3
+			this.add(it.next()); // Execute add(Object e) of A
+		return true;
+	}
+	public boolean add(Object e) {
+		list.add(e); // A.list{1} -> A.list{1, 2} -> A.list{1, 2, 3}
+		return true;
+	}
+
+	private int i = 0; // i of A is 0 at anytime
+	public int getI(){
+		return i;
+	}
+}
+
+class B extends A {
+	private int addCount = 0;
+	public int getAddCount() {
+		return addCount;
+	}
+
+	@Override
+	public boolean addAll(Collection<Object> c) { // When executing b.addAll(list), this function was is called firstly
+		return super.addAll(c);
+	}
+
+	@Override
+	public boolean add(Object e) {
+		addCount++; // B.addCount += 3 cause the time of the loop is 3
+		return super.add(e); // Turn to execute add(Object e) of A
+	}
+
+	public int i = 3;
+}
+
+public class Test {
+	public static void main(String[] args) {
+		B b = new B();
+		List<Object> list = Arrays.asList(1,2,3);
+		b.addAll(list); // Call functions
+		System.out.println(b.getAddCount()+b.getI()); // 6 + 0 = 6
+	}
+}
