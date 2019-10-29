@@ -1,0 +1,6 @@
+Write two differences between ArrayList and LinkedList.
+
+1. ArrayList internally uses a dynamic array to store the elements, while LinkedList uses a doubly linked list to store
+the elements.
+
+2. Manipulation with ArrayList is slower than that with LinkedList.
